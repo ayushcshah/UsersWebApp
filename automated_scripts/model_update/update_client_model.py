@@ -70,7 +70,8 @@ def main():
         raise ValueError("❌ GITHUB_TOKEN environment variable not set")
 
     # 1. Clone repo
-    clone_repo(args.repo_url, clone_dir)
+    repo_url = "https://" + github_token + "@" + args.repo_url.split("https://")[1]
+    clone_repo(repo_url, clone_dir)
 
     # 2. Create new branch
     create_branch(args.branch, clone_dir)
