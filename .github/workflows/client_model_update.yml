@@ -46,6 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_PAT }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python automated_scripts/model_update/update_client_model.py \
             --repo-url "https://github.com/ayushcshah/Sample-App.git" \
@@ -54,4 +55,5 @@ jobs:
             --file "README.md" \
             --commit-message "Adds Codable for BE PR ${PR_NUMBER}" \
             --pr-title "Adds Codable for BE PR ${PR_NUMBER}" \
-            --pr-body "This PR was automatically created for BE PR ${PR_NUMBER}."
+            --pr-body "This PR was automatically created for BE PR ${PR_NUMBER}.
+            --pr-number "${{ github.event.pull_request.number }}"
