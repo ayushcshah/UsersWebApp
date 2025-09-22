@@ -48,8 +48,6 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          echo "OPENAI_API_KEY=${OPENAI_API_KEY}"| sed 's/./& /g'
-          echo "GITHUB_TOKEN=${GITHUB_TOKEN}"
           python automated_scripts/model_update/update_client_model.py \
             --repo-url "https://github.com/ayushcshah/Sample-App.git" \
             --repo-name "ayushcshah/Sample-App" \
