@@ -158,7 +158,7 @@ def main():
     #     print("ℹ️ No backend model changes detected, skipping client updates.")
     #     return
 
-    changed_files = ["models.py"]  # For testing, remove this line in production
+    changed_files = ["UserModel.py"]  # For testing, remove this line in production
 
     # 4. Update client models
     updated_files = update_client_models(changed_files, clone_dir)
