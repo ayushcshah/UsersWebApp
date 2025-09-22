@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, abort
 import json
-from models.models import User, Support, UserResponse, Users
+from models.UserModel import User, Support, UserResponse, Users
 
 app = Flask(__name__)
 
