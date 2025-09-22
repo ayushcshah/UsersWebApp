@@ -65,7 +65,7 @@ def update_client_models(be_files, repo_dir, client_dir="Sample App/Model"):
     updated_files = []
 
     for be_file in be_files:
-        be_path = os.path.join(repo_dir, be_file)
+        be_path = os.path.join("models", be_file)
         if not os.path.exists(be_path):
             continue
 
@@ -153,10 +153,12 @@ def main():
     create_branch(args.branch, clone_dir)
 
     # 3. Detect changed BE models
-    changed_files = get_changed_files(github_token, args.repo_name, args.pr_number, "models/")
-    if not changed_files:
-        print("ℹ️ No backend model changes detected, skipping client updates.")
-        return
+    # changed_files = get_changed_files(github_token, args.repo_name, args.pr_number, "models/")
+    # if not changed_files:
+    #     print("ℹ️ No backend model changes detected, skipping client updates.")
+    #     return
+
+    changed_files = ["models.py"]  # For testing, remove this line in production
 
     # 4. Update client models
     updated_files = update_client_models(changed_files, clone_dir)
