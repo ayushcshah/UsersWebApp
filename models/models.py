@@ -32,7 +32,6 @@ class Users:
     total_pages: int
     data: List[User]
 
-
     def to_dict(self) -> Dict:
         return {
             "page": self.page,
