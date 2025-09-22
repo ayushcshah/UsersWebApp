@@ -36,6 +36,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_PAT }}
 
+      - name: Set up Git user
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "🤖 github-actions 🤖"
+
       - name: Run auto PR script
         if: success() && steps.changes.outcome == 'success'
         env:
