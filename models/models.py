@@ -6,7 +6,7 @@ class User:
     id: int
     email: str
     first_name: str
-    employer: str
+    last_name: str
     avatar: str
 
 @dataclass
