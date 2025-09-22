@@ -60,7 +60,7 @@ def get_changed_files(token, repo_name, pr_number, path_filter="models/"):
 
 def update_client_models(be_files, repo_dir, client_dir="Sample App/Model"):
     """Update client Codable files using OpenAI based on BE model changes."""
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    client = OpenAI()
 
     updated_files = []
 
